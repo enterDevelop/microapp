@@ -11,7 +11,7 @@ services:
     ports:
       - "63573:80"
 
-  currency-convert: 
+  currencyconverter: 
     build: ./backend/CurrencyConvert
     ports:
       - "63574:80"

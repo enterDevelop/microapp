@@ -1,0 +1,48 @@
+@mixin textWith1pxborderMixin($maincolor)
+{
+    text-shadow: -1px -1px 0px $maincolor,
+    0px -1px 0px $maincolor,
+    1px -1px 0px $maincolor,
+    -1px  0px 0px $maincolor,
+    1px  0px 0px $maincolor,
+    -1px  1px 0px $maincolor,
+    0px  1px 0px $maincolor,
+    1px  1px 0px $maincolor;
+}
+
+.weatherContainer {
+    width: 820px;
+    height: 337px;
+    background-image: url("./weather-background.png");
+    background-repeat: no-repeat;
+    color: white; 
+    padding-left: 50px;
+    padding-top: 25px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+
+    .cityName {
+        font-family: Alegreya;
+        font-size: 72px;
+        @include textWith1pxborderMixin(#2560a6);
+    }
+
+    .temp {
+        position: absolute;
+        top: 100px;
+        left: 472px;
+        font-family: Roboto;
+        font-size: 150px;
+        @include textWith1pxborderMixin(#2560a6);
+    }
+    
+    .fordate {
+        position: absolute;
+        left: 115px;
+        top: 157px;
+        font-family: Arimo;
+        font-size: 52px;
+        @include textWith1pxborderMixin(#B83535);
+    }
+}

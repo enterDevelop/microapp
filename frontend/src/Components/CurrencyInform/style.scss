@@ -1,0 +1,47 @@
+@mixin textWith1pxborderMixin($maincolor)
+{
+    text-shadow: -1px -1px 0px $maincolor,
+    0px -1px 0px $maincolor,
+    1px -1px 0px $maincolor,
+    -1px  0px 0px $maincolor,
+    1px  0px 0px $maincolor,
+    -1px  1px 0px $maincolor,
+    0px  1px 0px $maincolor,
+    1px  1px 0px $maincolor;
+}
+
+.dollar {
+    width: 820px;
+    height: 337px;
+    position: relative;
+
+    background-image: url("./pexels-photo-251287.png");
+    background-repeat: no-repeat;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+
+    .valueGreen {
+        position: absolute;
+        left: -5px;
+        top: 94px;
+        font-family: Roboto;
+    
+        font-size: 95px;
+        color: #3A9133;
+        @include textWith1pxborderMixin(#E5E5E5);
+    }
+
+    .fordate {
+        position: absolute;
+        left: 557px;
+        top: 250px;
+
+        font-size: 48px;
+        color: #E5E5E5;
+
+        @include textWith1pxborderMixin(#3A9133);
+    }
+}

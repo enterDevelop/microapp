@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { IRootReducerState } from '../../Reducers/RootReducer'
 import { getCurrentRubUsdCurrency } from '../../Actions/CurrencyActions';
-const style = require('./style.scss');
+// const style = require('./style.scss');
+import './style.scss';
 
 interface CurrencyCombinedProps extends CurrencyStateProps, CurrencyDispatchProps { }
 
@@ -23,9 +24,9 @@ class Currency extends React.PureComponent<CurrencyCombinedProps> {
         const dateString = `${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()}.${date.getMonth() < 10 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1)}.${date.getFullYear()}`;
 
         return (
-            <div className={style.dollar}>
-                <span className={style.valueGreen}>1$ = {usdrub.toFixed(2)} RUB</span>
-                <span className={style.fordate}>{dateString}</span>
+            <div className="dollar">
+                <span className="valueGreen">1$ = {usdrub.toFixed(2)} RUB</span>
+                <span className="fordate">{dateString}</span>
             </div>
         );
     }

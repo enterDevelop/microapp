@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { IRootReducerState } from '../../Reducers/RootReducer';
 import { getCurrentNovosibirskWeather } from '../../Actions/WeatherActions';
-
-const style = require('./style.scss');
+import './style.scss';
 
 interface WeatherCombinedProps extends WeatherStateProps, WeatherDispatchProps { }
 
@@ -24,14 +23,14 @@ class Weather extends React.PureComponent<WeatherCombinedProps> {
         if (errorMessage)
             return null;
         return (
-            <div className={style.weatherContainer}>
-                <span className={style.cityName}>
+            <div className="weatherContainer">
+                <span className="cityName">
                     {city}
                 </span> 
-                <span className={style.temp}>
+                <span className="temp">
                     {temp}&#176;
                 </span> 
-                <span className={style.fordate}>
+                <span className="fordate">
                     {dateString}
                 </span> 
             </div>

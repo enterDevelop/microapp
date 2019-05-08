@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import { IRootReducerState } from '../../Reducers/RootReducer'
 import { getCurrentRubUsdCurrency } from '../../Actions/CurrencyActions';
-// const style = require('./style.scss');
 import './style.scss';
 
 interface CurrencyCombinedProps extends CurrencyStateProps, CurrencyDispatchProps { }

@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "1234:80"
+
+  weather:
+    build: ./backend/Weather
+    ports:
+      - "63573:80"
+
+  currency-convert: 
+    build: ./backend/CurrencyConvert
+    ports:
+      - "63574:80"

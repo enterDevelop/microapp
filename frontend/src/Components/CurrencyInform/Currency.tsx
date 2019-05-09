@@ -1,26 +1,25 @@
-import * as React from 'react';
-import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
-import { IRootReducerState } from '../../Reducers/RootReducer'
-import { getCurrentRubUsdCurrency } from '../../Actions/CurrencyActions';
-import './style.scss';
+import * as React from "react";
+import { connect } from "react-redux";
+import { Dispatch } from "redux";
+import { IRootReducerState } from "../../Reducers/RootReducer";
+import { getCurrentRubUsdCurrency } from "../../Actions/CurrencyActions";
+import "./style.scss";
 
-interface CurrencyCombinedProps extends CurrencyStateProps, CurrencyDispatchProps { }
+interface CurrencyCombinedProps extends CurrencyStateProps, CurrencyDispatchProps {}
 
 class Currency extends React.PureComponent<CurrencyCombinedProps> {
-
     public componentDidMount(): void {
-        this.props.getCurrentCurrency()
+        this.props.getCurrentCurrency();
     }
 
     public render(): React.ReactNode {
-        const { isFetching, usdrub, errorMessage } = this.props
-        if (isFetching)
-            return <h2>Loading</h2>
-        if (errorMessage)
-            return null;
+        const { isFetching, usdrub, errorMessage } = this.props;
+        if (isFetching) return <h2>Loading</h2>;
+        if (errorMessage) return null;
         const date = new Date();
-        const dateString = `${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()}.${date.getMonth() < 10 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1)}.${date.getFullYear()}`;
+        const dateString = `${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()}.${
+            date.getMonth() < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1
+        }.${date.getFullYear()}`;
 
         return (
             <div className="dollar">
@@ -51,5 +50,7 @@ const mapDispatchToProps = (dispatch: Dispatch): CurrencyDispatchProps => ({
     getCurrentCurrency: () => dispatch(getCurrentRubUsdCurrency())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Currency);
-
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Currency);

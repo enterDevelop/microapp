@@ -1,11 +1,11 @@
-import * as React from 'react';
-import { connect } from 'react-redux';
-import { Dispatch } from 'redux';
-import { IRootReducerState } from '../../Reducers/RootReducer';
-import { getCurrentNovosibirskWeather } from '../../Actions/WeatherActions';
-import './style.scss';
+import * as React from "react";
+import { connect } from "react-redux";
+import { Dispatch } from "redux";
+import { IRootReducerState } from "../../Reducers/RootReducer";
+import { getCurrentNovosibirskWeather } from "../../Actions/WeatherActions";
+import "./style.scss";
 
-interface WeatherCombinedProps extends WeatherStateProps, WeatherDispatchProps { }
+interface WeatherCombinedProps extends WeatherStateProps, WeatherDispatchProps {}
 
 class Weather extends React.PureComponent<WeatherCombinedProps> {
     componentDidMount() {
@@ -14,25 +14,19 @@ class Weather extends React.PureComponent<WeatherCombinedProps> {
 
     public render() {
         const { isFetching, temp, errorMessage } = this.props;
-        const city = 'Новосибирск';
+        const city = "Новосибирск";
         const date = new Date();
-        const dateString = `${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()}.${date.getMonth() < 10 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1)}.${date.getFullYear()}`;
+        const dateString = `${date.getDate() < 10 ? "0" + date.getDate() : date.getDate()}.${
+            date.getMonth() < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1
+        }.${date.getFullYear()}`;
 
-        if (isFetching)
-            return <h1>Loading</h1> // спиннер
-        if (errorMessage)
-            return null;
+        if (isFetching) return <h1>Loading</h1>; // спиннер
+        if (errorMessage) return null;
         return (
             <div className="weatherContainer">
-                <span className="cityName">
-                    {city}
-                </span> 
-                <span className="temp">
-                    {temp}&#176;
-                </span> 
-                <span className="fordate">
-                    {dateString}
-                </span> 
+                <span className="cityName">{city}</span>
+                <span className="temp">{temp}&#176;</span>
+                <span className="fordate">{dateString}</span>
             </div>
         );
     }
@@ -57,7 +51,10 @@ const mapStateToProps = (state: IRootReducerState): WeatherStateProps => ({
 });
 
 const mapDispatchToProps = (dispatch: Dispatch): WeatherDispatchProps => ({
-    getCurrentWeather: (city: string = 'Novosibirsk') => dispatch(getCurrentNovosibirskWeather(city))
+    getCurrentWeather: (city: string = "Novosibirsk") => dispatch(getCurrentNovosibirskWeather(city))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Weather);
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Weather);

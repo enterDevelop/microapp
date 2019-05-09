@@ -1,4 +1,4 @@
 export default interface ICurrency {
-    inputCurrency: string,
-    outputCurrency: string 
+    inputCurrency: string;
+    outputCurrency: string;
 }

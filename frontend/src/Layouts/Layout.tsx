@@ -1,6 +1,6 @@
-import Weather from '../Components/WatherInform/Weather';
-import Currency from '../Components/CurrencyInform/Currency'
-import * as React from 'react';
+import Weather from "../Components/WatherInform/Weather";
+import Currency from "../Components/CurrencyInform/Currency";
+import * as React from "react";
 
 class Layout extends React.PureComponent {
     public render(): React.ReactNode {

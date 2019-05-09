@@ -1,13 +1,6 @@
-@mixin textWith1pxborderMixin($maincolor)
-{
-    text-shadow: -1px -1px 0px $maincolor,
-    0px -1px 0px $maincolor,
-    1px -1px 0px $maincolor,
-    -1px  0px 0px $maincolor,
-    1px  0px 0px $maincolor,
-    -1px  1px 0px $maincolor,
-    0px  1px 0px $maincolor,
-    1px  1px 0px $maincolor;
+@mixin textWith1pxborderMixin($maincolor) {
+    text-shadow: -1px -1px 0px $maincolor, 0px -1px 0px $maincolor, 1px -1px 0px $maincolor, -1px 0px 0px $maincolor, 1px 0px 0px $maincolor,
+        -1px 1px 0px $maincolor, 0px 1px 0px $maincolor, 1px 1px 0px $maincolor;
 }
 
 .weatherContainer {
@@ -15,7 +8,7 @@
     height: 337px;
     background-image: url("weather-background.png");
     background-repeat: no-repeat;
-    color: white; 
+    color: white;
     padding-left: 50px;
     padding-top: 25px;
     font-style: normal;
@@ -36,13 +29,13 @@
         font-size: 150px;
         @include textWith1pxborderMixin(#2560a6);
     }
-    
+
     .fordate {
         position: absolute;
         left: 115px;
         top: 157px;
         font-family: Arimo;
         font-size: 52px;
-        @include textWith1pxborderMixin(#B83535);
+        @include textWith1pxborderMixin(#b83535);
     }
 }

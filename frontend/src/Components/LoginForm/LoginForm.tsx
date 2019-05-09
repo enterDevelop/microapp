@@ -1,5 +1,5 @@
-import * as React from 'react';
-import styled from 'styled-components';
+import * as React from "react";
+import styled from "styled-components";
 
 interface ILoginFormProps {}
 
@@ -37,14 +37,14 @@ const BackGroundContainer = styled.div`
 `;
 
 class LoginForm extends React.Component<ILoginFormProps, ILoginFormState> {
-    constructor(props: ILoginFormProps){
+    constructor(props: ILoginFormProps) {
         super(props);
         this.state = {
             values: {
-                username: '',
-                password: '',
-            },
-        }
+                username: "",
+                password: ""
+            }
+        };
 
         this.onChange = this.onChange.bind(this);
         this.login = this.login.bind(this);
@@ -57,7 +57,7 @@ class LoginForm extends React.Component<ILoginFormProps, ILoginFormState> {
                 Password <input type="password" name="password" onChange={this.onChange} value={this.state.values.password} />
                 <LoginButton onClick={this.login}>Login</LoginButton>
             </LoginContainer>
-        )
+        );
     }
 
     private login() {
@@ -69,8 +69,8 @@ class LoginForm extends React.Component<ILoginFormProps, ILoginFormState> {
         this.onChangeValue(value, name);
     }
 
-    private onChangeValue(value:string, name: keyof ILoginFormValues) {
-        this.setState((pervState) => ({
+    private onChangeValue(value: string, name: keyof ILoginFormValues) {
+        this.setState(pervState => ({
             values: {
                 ...pervState.values,
                 [name]: value
@@ -79,4 +79,4 @@ class LoginForm extends React.Component<ILoginFormProps, ILoginFormState> {
     }
 }
 
-export {LoginForm};
+export { LoginForm };

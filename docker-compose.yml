@@ -6,6 +6,11 @@ services:
     ports:
       - "1234:80"
 
+  login:
+    build: ./backend/Login
+    ports:
+      - "63572:80"
+
   weather:
     build: ./backend/Weather
     ports:

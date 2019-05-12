@@ -1,17 +1,22 @@
-version: '3'
+version: "3"
 
 services:
-  frontend:
-    build: ./frontend
-    ports:
-      - "1234:80"
+    frontend:
+        build: ./frontend
+        ports:
+            - "1234:80"
 
-  weather:
-    build: ./backend/Weather
-    ports:
-      - "63573:80"
+    weather:
+        build: ./backend/Weather
+        ports:
+            - "63573:80"
 
-  currencyconverter: 
-    build: ./backend/CurrencyConvert
-    ports:
-      - "63574:80"
+    currencyconverter:
+        build: ./backend/CurrencyConvert
+        ports:
+            - "63574:80"
+
+    apigateway:
+        build: ./backend/ApiGateway
+        ports:
+            - "63572:80"

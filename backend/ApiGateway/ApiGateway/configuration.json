@@ -1,0 +1,32 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/v1/Weather?city={city}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "192.168.99.100",
+          "Port": 63573
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/Weather?city={city}",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/convert",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "192.168.99.100",
+          "Port": 63574
+        }
+      ],
+      "UpstreamPathTemplate": "/api/v1/convert",
+      "UpstreamHttpMethod": [ "POST" ]
+    }
+
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "192.168.99.100"
+  }
+}
